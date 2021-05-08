@@ -28,11 +28,8 @@ const StyledPheed = styled(DefaultDiv)`
 `;
 
 const StyledSideMenu = styled(DefaultDiv)`
-    margin-left: 24px;
-  flex: 0 0 312px;
-  width: 312px;
-  display: none;
-  background-color: deepskyblue;
+    width: 24%;
+  padding: 100px 50px 0px;
 `;
 
 
@@ -43,6 +40,11 @@ function BottomLayout() {
 
         <BottomDiv>
             <BottomInner>
+                {/* 사이드 메뉴들 */}
+                <StyledSideMenu>
+
+
+                </StyledSideMenu>
                 <StyledPheed>
                     {/* 게시글 작성 칸 */}
                     <CreatePost>
@@ -57,11 +59,6 @@ function BottomLayout() {
                     </Pheed>
 
                 </StyledPheed>
-
-                {/* 사이드 메뉴들 */}
-                <StyledSideMenu>
-
-                </StyledSideMenu>
             </BottomInner>
         </BottomDiv>
     );

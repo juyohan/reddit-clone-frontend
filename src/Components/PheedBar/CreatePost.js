@@ -2,7 +2,6 @@ import React, {useState} from 'react';
 import styled, {css} from 'styled-components';
 import DefaultDiv from "../DefaultValue/DefaultDiv";
 import {Link, Route} from "react-router-dom";
-import GoPost from "../PostPage/GoPost";
 import PostInput from "./PostInput";
 import BottomLayout from "../Layout/BottomLayout";
 import PostLayout from "../PostPage/PostLayout";
@@ -112,20 +111,20 @@ function CreatePost() {
 
     return (
         <StyledPost>
-            {/* 아이콘 누르면 자기 페이지로 */}
-            <StyledIcon to={"/user"}>
-                <StyledIconInner>
-                    <StyledIconInner pos>
-                        <BackGroundIcon>
-                        </BackGroundIcon>
-                        <StyledCircle>
-                            <PostIcon>
-                                icon
-                            </PostIcon>
-                        </StyledCircle>
-                    </StyledIconInner>
-                </StyledIconInner>
-            </StyledIcon>
+            {/*/!* 아이콘 누르면 자기 페이지로 *!/*/}
+            {/*<StyledIcon to={"/user"}>*/}
+            {/*    <StyledIconInner>*/}
+            {/*        <StyledIconInner pos>*/}
+            {/*            <BackGroundIcon>*/}
+            {/*            </BackGroundIcon>*/}
+            {/*            <StyledCircle>*/}
+            {/*                <PostIcon>*/}
+            {/*                    icon*/}
+            {/*                </PostIcon>*/}
+            {/*            </StyledCircle>*/}
+            {/*        </StyledIconInner>*/}
+            {/*    </StyledIconInner>*/}
+            {/*</StyledIcon>*/}
 
             {/* post 누르면 작성하는 페이지로 변환 */}
             <StyledLink to={"/api/get/data"}>
