@@ -127,7 +127,7 @@ function CreatePost() {
             {/*</StyledIcon>*/}
 
             {/* post 누르면 작성하는 페이지로 변환 */}
-            <StyledLink to={"/api/get/data"}>
+            <StyledLink to={"/api/data/post/content/"}>
                 <PostInput role={"button"}>
                 </PostInput>
             </StyledLink>

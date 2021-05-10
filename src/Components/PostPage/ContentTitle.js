@@ -47,9 +47,7 @@ function ContentTitle() {
     return (
         <StyledDiv>
             <StyledDivInner>
-                <InputTitleDiv maxLength={"300"} placeholder={"Title"} rows={"1"}>
-
-                </InputTitleDiv>
+                <InputTitleDiv maxLength={"300"} placeholder={"Title"} rows={"1"}/>
                 <MaxTitleWordDiv>
                     {/* 몇자 적었는지 알려줌 */}
                 </MaxTitleWordDiv>

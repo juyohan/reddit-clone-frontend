@@ -2,14 +2,14 @@ import React from 'react';
 import styled from 'styled-components'
 
 const StyledDiv = styled.div`
-    overflow: auto;
+  overflow: auto;
   position: relative;
   height: inherit;
   text-align: initial;
 `;
 
 const StyledDivContainer = styled.div`
-    border-left: none;
+  border-left: none;
   background-color: hsla(0, 0%, 100%, 0);
   position: relative;
   z-index: 1;
@@ -18,7 +18,7 @@ const StyledDivContainer = styled.div`
 `;
 
 const ContainerDiv = styled.div`
-    outline: none;
+  outline: none;
   user-select: text;
   white-space: pre-wrap;
   overflow-wrap: break-word;
@@ -39,12 +39,12 @@ const ContainerDiv = styled.div`
 `;
 
 const TextDiv = styled.div`
-    padding-top: 0;
+  padding-top: 0;
   direction: ltr;
   text-align: left;
   position: relative;
   white-space: pre-wrap;
-  
+
   &:empty:before {
     content: 'Text (optional)';
     cursor: text;
@@ -64,11 +64,15 @@ function WriteContent() {
                 <StyledDivContainer>
                     <ContainerDiv contentEditable={"true"} role={"textbox"} spellCheck={"true"}>
                         <div data-contents={"true"}>
-                            <TextDiv>
-                                <span data-text={"true"}>
-
+                            <div data-block={"true"}>
+                                <TextDiv>
+                                <span>
+                                    <span data-text={"true"}>
+                                        <br data-text={"true"}/>
+                                    </span>
                                 </span>
-                            </TextDiv>
+                                </TextDiv>
+                            </div>
                         </div>
                     </ContainerDiv>
                 </StyledDivContainer>

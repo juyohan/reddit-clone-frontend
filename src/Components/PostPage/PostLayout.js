@@ -2,6 +2,7 @@ import React from 'react';
 import styled from "styled-components";
 import PostDivTitle from "./PostDivTitle";
 import PostContextDiv from "./PostContextDiv";
+import PostDataLayout from "./PostDataLayout";
 
 const StyledDiv = styled.div`
   display: flex;

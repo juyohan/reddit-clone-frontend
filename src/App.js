@@ -25,8 +25,8 @@ function App() {
                 {/* 여기가 하단 입니다. */}
                 <DefaultDiv bottom>
                     <BottomDiv>
-                        <Route path={"/home/"} component={BottomLayout}/>
-                        <Route path={"/api/get/data"} component={PostLayout}/>
+                        <Route path={"/home"} component={BottomLayout}/>
+                        <Route path={"/api/data/post"} component={PostLayout}/>
                     </BottomDiv>
                 </DefaultDiv>
 

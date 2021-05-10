@@ -1,8 +1,24 @@
 import React, {useState} from 'react';
-import styled from "styled-components";
+import styled, {css} from "styled-components";
 import {Link} from "react-router-dom";
 
-const SelectedButton = styled.button`
+const StyledColor = css`
+  color: gray;
+  
+  &::after {
+    content: "";
+    box-sizing: border-box;
+    position: absolute;
+    left: 0;
+    right: 0;
+    background-color: currentColor;
+    bottom: -1px;
+    height: 2px;
+  }
+`;
+
+const SelectedButton = styled(Link)`
+  text-decoration: none;
     background: none;
   font-size: 14px;
   font-weight: 700;
@@ -22,33 +38,21 @@ const SelectedButton = styled.button`
   display: flex;
   justify-content: center;
   align-items: center;
-  color: gray;
+  
+  ${StyledColor};
   
   &:hover {
     background-color: lightblue;
   }
   
-  &::after {
-    content: "";
-    box-sizing: border-box;
-    position: absolute;
-    left: 0;
-    right: 0;
-    background-color: currentColor;
-    bottom: -1px;
-    height: 2px;
+  & {
+    color: skyblue;
+    fill: skyblue;
   }
+  
 `;
 
 function PostSelectedButton({children, ...rest}) {
-
-    const [isClick, setIsClick] = useState(false);
-
-    const ClickButton = () => {
-        setIsClick(true);
-        if (isClick === true)
-            setIsClick(false);
-    }
 
     return (
         <SelectedButton {...rest}>
