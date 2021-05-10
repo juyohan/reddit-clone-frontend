@@ -44,12 +44,11 @@ const SelectedButton = styled(Link)`
   &:hover {
     background-color: lightblue;
   }
-  
-  & {
+
+  &:focus {
     color: skyblue;
     fill: skyblue;
   }
-  
 `;
 
 function PostSelectedButton({children, ...rest}) {

@@ -26,7 +26,7 @@ function App() {
                 <DefaultDiv bottom>
                     <BottomDiv>
                         <Route path={"/home"} component={BottomLayout}/>
-                        <Route path={"/api/data/post"} component={PostLayout}/>
+                        <Route path={"/api/data/post"} component={PostLayout} />
                     </BottomDiv>
                 </DefaultDiv>
 

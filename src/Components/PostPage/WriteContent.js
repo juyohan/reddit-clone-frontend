@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 import styled from 'styled-components'
 
 const StyledDiv = styled.div`
@@ -36,15 +36,7 @@ const ContainerDiv = styled.div`
   font-size: 14px;
   font-weight: 400;
   line-height: 21px;
-`;
-
-const TextDiv = styled.div`
-  padding-top: 0;
-  direction: ltr;
-  text-align: left;
-  position: relative;
-  white-space: pre-wrap;
-
+  
   &:empty:before {
     content: 'Text (optional)';
     cursor: text;
@@ -52,28 +44,48 @@ const TextDiv = styled.div`
     color: darkgray;
     left: 0;
     top: 0;
-    position: absolute;
+    position: relative;
   }
 `;
 
+// const TextDiv = styled.div`
+//   padding-top: 0;
+//   direction: ltr;
+//   text-align: left;
+//   position: relative;
+//   white-space: pre-wrap;
+//
+//   &:empty:before {
+//     content: 'Text (optional)';
+//     cursor: text;
+//     bottom: 0;
+//     color: darkgray;
+//     left: 0;
+//     top: 0;
+//     position: absolute;
+//   }
+// `;
+
 
 function WriteContent() {
+
     return (
         <div>
             <StyledDiv>
                 <StyledDivContainer>
-                    <ContainerDiv contentEditable={"true"} role={"textbox"} spellCheck={"true"}>
-                        <div data-contents={"true"}>
-                            <div data-block={"true"}>
-                                <TextDiv>
-                                <span>
-                                    <span data-text={"true"}>
-                                        <br data-text={"true"}/>
-                                    </span>
-                                </span>
-                                </TextDiv>
-                            </div>
-                        </div>
+                    <ContainerDiv contentEditable={"true"} spellCheck={"true"}
+                    >
+                        {/*<div data-contents={"true"}>*/}
+                        {/*    <div data-block={"true"}>*/}
+                        {/*        <TextDiv>*/}
+                        {/*        <span>*/}
+                        {/*/!*            <span data-text={"true"}>*!/*/}
+                        {/*                <br data-text={"true"}/>*/}
+                        {/*/!*            </span>*!/*/}
+                        {/*        </span>*/}
+                        {/*        </TextDiv>*/}
+                        {/*    </div>*/}
+                        {/*</div>*/}
                     </ContainerDiv>
                 </StyledDivContainer>
             </StyledDiv>

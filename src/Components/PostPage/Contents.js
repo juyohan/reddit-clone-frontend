@@ -1,5 +1,5 @@
-import React from 'react';
-import styled from "styled-components";
+import React, {useState, useRef} from 'react';
+import styled, {css} from "styled-components";
 import WriteTypes from "./WriteTypes";
 import WriteContent from "./WriteContent";
 
@@ -12,12 +12,19 @@ const StyledDivInner = styled.div`
   border: 1px solid lightgray;
   position: relative;
   background: white;
+  
+  ${props => props.set && css `
+    border: 1px solid black;
+  `}
 `;
 
 function Contents() {
+
+
     return (
         <div>
             <StyledDiv>
+                {/* 해당 div 클릭시 border 라인 생성 */}
                 <StyledDivInner>
                     <WriteTypes>
 

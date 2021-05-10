@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useState, useRef} from 'react';
 import styled from "styled-components";
 import PostSelectedButton from "./PostSelectedButton";
 
@@ -23,9 +23,12 @@ const StyledSvg = styled.svg`
 `;
 
 function SelectTypeContent() {
+    const butRef = useRef();
+
     return (
         <StyledDiv>
             <SelectedDiv>
+                {/* 페이지 들어올 때 기본 값으로 content에 focus되게 만들기 */}
                 <PostSelectedButton to={"/api/data/post/content/"}>
                     <StyledSvg viewBox={"0 0 20 20"} xmlns={"http://www.w3.org/2000/svg"}>
                         <g fill={"inherit"}>

@@ -1,4 +1,4 @@
-import React from 'react';
+import React,{useState} from 'react';
 import styled from "styled-components";
 
 const StyledDiv = styled.div`
@@ -28,6 +28,11 @@ const InputTitleDiv = styled.textarea`
   font-weight: 400;
   line-height: 21px;
   font-family: inherit;
+  
+  &:focus {
+    box-shadow: none;
+    border: 1px solid black;
+  }
 `;
 
 const MaxTitleWordDiv = styled.div`
@@ -44,12 +49,19 @@ const MaxTitleWordDiv = styled.div`
 `;
 
 function ContentTitle() {
+    const [title, setTitle] = useState("");
+
     return (
         <StyledDiv>
             <StyledDivInner>
-                <InputTitleDiv maxLength={"300"} placeholder={"Title"} rows={"1"}/>
+                <InputTitleDiv maxLength={"300"} placeholder={"Title"} rows={"1"}
+                               onChange={function (e) {
+                                   setTitle(e.target.value);
+                               }}>
+                </InputTitleDiv>
+                {/* 몇자 적었는지 알려줌 */}
                 <MaxTitleWordDiv>
-                    {/* 몇자 적었는지 알려줌 */}
+                    {title.length}/300
                 </MaxTitleWordDiv>
             </StyledDivInner>
         </StyledDiv>
