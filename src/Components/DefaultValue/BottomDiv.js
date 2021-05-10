@@ -4,7 +4,7 @@ import styled from "styled-components";
 const StyledDiv = styled.div`
   display: flex;
   flex-direction: column;
-  min-height: calc(100vh - 48px);
+  min-height: calc(100vh - 50px);
 `;
 
 function BottomDiv({children}) {

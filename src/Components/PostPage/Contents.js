@@ -1,7 +1,7 @@
 import React, {useState, useRef} from 'react';
 import styled, {css} from "styled-components";
-import WriteTypes from "./WriteTypes";
-import WriteContent from "./WriteContent";
+import WriteTypes from "./PostPageContent/WriteTypes";
+import WriteContent from "./PostPageContent/WriteContent";
 
 const StyledDiv = styled.div`
   position: relative;

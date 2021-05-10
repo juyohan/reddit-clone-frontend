@@ -48,7 +48,7 @@ const MaxTitleWordDiv = styled.div`
   right: 12px;
 `;
 
-function ContentTitle() {
+function ContentTitle(props) {
     const [title, setTitle] = useState("");
 
     return (
@@ -57,6 +57,8 @@ function ContentTitle() {
                 <InputTitleDiv maxLength={"300"} placeholder={"Title"} rows={"1"}
                                onChange={function (e) {
                                    setTitle(e.target.value);
+                                   // debugger;
+                                   props.setData(e.target.textLength);
                                }}>
                 </InputTitleDiv>
                 {/* 몇자 적었는지 알려줌 */}

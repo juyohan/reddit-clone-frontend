@@ -6,18 +6,18 @@ import SelectType from "../PheedBar/SelectType";
 import Pheed from "../MainPheed/Pheed";
 
 const BottomDiv = styled(DefaultDiv)`
-    z-index: 3;
+  z-index: 3;
 `
 
 const BottomInner = styled.div`
-    max-width: 100%;
+  max-width: 100%;
   box-sizing: border-box;
   display: flex;
   flex-direction: row;
   justify-content: center;
   margin: 0 auto;
   //padding: 20px 24px;
-  
+
   @media (min-width: 640px) {
     padding: 20px 24px;
   }
@@ -28,7 +28,7 @@ const StyledPheed = styled(DefaultDiv)`
 `;
 
 const StyledSideMenu = styled(DefaultDiv)`
-    width: 24%;
+  width: 24%;
   padding: 100px 50px 0px;
 `;
 
@@ -37,30 +37,31 @@ const StyledSideMenu = styled(DefaultDiv)`
 
 function BottomLayout() {
     return (
+        <DefaultDiv bottom>
+                <BottomDiv>
+                    <BottomInner>
+                        {/* 사이드 메뉴들 */}
+                        <StyledSideMenu>
 
-        <BottomDiv>
-            <BottomInner>
-                {/* 사이드 메뉴들 */}
-                <StyledSideMenu>
 
+                        </StyledSideMenu>
+                        <StyledPheed>
+                            {/* 게시글 작성 칸 */}
+                            <CreatePost>
+                            </CreatePost>
 
-                </StyledSideMenu>
-                <StyledPheed>
-                    {/* 게시글 작성 칸 */}
-                    <CreatePost>
-                    </CreatePost>
+                            {/* 최신순, 베스트순, 피드형, 목록형 등등  */}
+                            <SelectType>
+                            </SelectType>
 
-                    {/* 최신순, 베스트순, 피드형, 목록형 등등  */}
-                    <SelectType>
-                    </SelectType>
+                            {/* 실질적인 데이터 내용들 */}
+                            <Pheed>
+                            </Pheed>
 
-                    {/* 실질적인 데이터 내용들 */}
-                    <Pheed>
-                    </Pheed>
-
-                </StyledPheed>
-            </BottomInner>
-        </BottomDiv>
+                        </StyledPheed>
+                    </BottomInner>
+                </BottomDiv>
+        </DefaultDiv>
     );
 }
 

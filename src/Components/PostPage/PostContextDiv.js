@@ -1,4 +1,4 @@
-import React from 'react';
+import React,{useState} from 'react';
 import styled from "styled-components";
 import SelectTypeContent from "./SelectTypeContent";
 import ContentDiv from "./ContentDiv";
@@ -12,6 +12,8 @@ const StyledDiv = styled.div`
 `;
 
 function PostContextDiv () {
+    const [isTitleValue, setIsTitleValue] = useState(0);
+
     return (
         <StyledDiv>
             {/* 해당 버튼에 의해 */}
@@ -19,10 +21,9 @@ function PostContextDiv () {
 
             </SelectTypeContent>
             {/* 안에 내용물이 바뀜 */}
-            <ContentDiv>
-
+            <ContentDiv setData={setIsTitleValue}>
             </ContentDiv>
-            <PostDataLayout>
+            <PostDataLayout isable={isTitleValue}>
             </PostDataLayout>
         </StyledDiv>
     );

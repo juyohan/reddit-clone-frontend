@@ -23,12 +23,9 @@ function App() {
                     </MenuLayout>
                 </DefaultHeader>
                 {/* 여기가 하단 입니다. */}
-                <DefaultDiv bottom>
-                    <BottomDiv>
-                        <Route path={"/home"} component={BottomLayout}/>
-                        <Route path={"/api/data/post"} component={PostLayout} />
-                    </BottomDiv>
-                </DefaultDiv>
+
+                <Route path={"/home"} component={BottomLayout}/>
+                <Route path={"/api/data/post"} component={PostLayout}/>
 
             </LayoutDiv>
         </>

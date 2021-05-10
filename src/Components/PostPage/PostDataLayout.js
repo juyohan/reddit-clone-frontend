@@ -1,5 +1,5 @@
-import React from 'react';
-import styled from "styled-components";
+import React, {useState, useEffect} from 'react';
+import styled, {css} from "styled-components";
 
 const StyledDiv = styled.div`
   //  display: flex;
@@ -31,11 +31,6 @@ const ButtonInnerDiv = styled.div`
 `;
 
 const PostButton = styled.button`
-    cursor: not-allowed;
-  filter: grayscale(1);
-  background-color: skyblue;
-  color: white;
-  fill: white;
   width: 100%;
   position: relative;
   border: none;
@@ -54,6 +49,18 @@ const PostButton = styled.button`
   display: flex;
   justify-content: center;
   text-align: center;
+  background-color: dodgerblue;
+  color: white;
+  fill: white;
+  cursor: pointer;
+  
+  &:disabled {
+       cursor: not-allowed;
+       filter: grayscale(1);
+       background-color: skyblue;
+       color: white;
+       fill: white;
+  }
   
   &::before {
     content: "";
@@ -67,14 +74,16 @@ const PostButton = styled.button`
   }
 `;
 
-function PostDataLayout() {
+function PostDataLayout(props) {
+    const value = props.isable;
+
     return (
         <StyledDiv>
             <SplitDiv>
                 <ButtonDiv>
                     <ButtonInnerDiv>
                         {/* 내용물을 채우면 전송하기 버튼 활성화 */}
-                        <PostButton role={"button"} tabindex={"0"}>
+                        <PostButton role={"button"} tabindex={"0"} disabled={value === 0}>
                             Post
                         </PostButton>
                     </ButtonInnerDiv>
