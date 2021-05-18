@@ -32,8 +32,8 @@ const StyledDiv = styled.div`
 const MenuBarDiv = styled.div`
     display: flex;
   flex-direction: row;
-  place-content: center space-between;
-  -webkit-box-align: center;
+  //place-content: center space-between;
+  
   align-items: center;
   width: inherit;
   border: 1px solid white;

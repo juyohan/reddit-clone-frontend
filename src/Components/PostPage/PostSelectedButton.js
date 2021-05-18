@@ -4,17 +4,6 @@ import {Link} from "react-router-dom";
 
 const StyledColor = css`
   color: gray;
-  
-  &::after {
-    content: "";
-    box-sizing: border-box;
-    position: absolute;
-    left: 0;
-    right: 0;
-    background-color: currentColor;
-    bottom: -1px;
-    height: 2px;
-  }
 `;
 
 const SelectedButton = styled(Link)`
@@ -48,6 +37,17 @@ const SelectedButton = styled(Link)`
   &:focus {
     color: skyblue;
     fill: skyblue;
+  }
+  
+  &::after {
+    content: "";
+    box-sizing: border-box;
+    position: absolute;
+    left: 0;
+    right: 0;
+    background-color: currentColor;;
+    bottom: -1px;
+    height: 2px;
   }
 `;
 

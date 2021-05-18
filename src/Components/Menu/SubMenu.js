@@ -4,12 +4,13 @@ import styled, {css} from "styled-components";
 const StyledDiv = styled.div`
   background-color: white;
     display: flex;
+  flex: 1;
   align-items: center;
-  justify-content: space-evenly;
+  justify-content: center;
   height: inherit;
   font-size: 14px;
   flex-direction: row;
-  min-width: 350px;
+  //width: 100%;
   
 `;
 
@@ -18,11 +19,12 @@ const SubA = styled.a`
   border-bottom: 4px solid white;
   height: 100%;
   text-transform: uppercase;
-    position: relative;
+  position: relative;
   font-weight: 500;
   line-height: 50px;
   text-decoration: none;
   letter-spacing: unset;
+  padding: 0 15px;
 
   &:hover {
     border-bottom: 4px solid lightgray;

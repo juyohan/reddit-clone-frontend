@@ -16,7 +16,7 @@ const Search = styled.input`
   box-shadow: none;
   height: 36px;
   outline: none;
-  padding: 0 16px 0 40px;
+  padding: 0 8px;
   width: 100%;
   
 `;
@@ -25,7 +25,7 @@ function MenuSearch({children, open, ...rest}) {
     return (
         <>
             <StyledForm role={"search"} open={open}>
-                <Search {...rest}/>
+                <Search {...rest} />
             </StyledForm>
         </>
     );

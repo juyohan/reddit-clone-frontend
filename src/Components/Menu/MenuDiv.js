@@ -5,6 +5,7 @@ import DefaultDiv from "../DefaultValue/DefaultDiv";
 
 const StyledMenuDiv = styled(DefaultDiv)`
   height: inherit;
+  
   //width: auto;
   background-color: white;
   display: flex;
@@ -22,6 +23,7 @@ const StyledMenuDiv = styled(DefaultDiv)`
     padding-left: 10px;
     margin-left: 16px;
     margin-right: 16px;
+    border: none;
     //position: relative;
   `};
 `;

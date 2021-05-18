@@ -18,9 +18,7 @@ const StyledDivInner = styled.div`
   `}
 `;
 
-function Contents() {
-
-
+function Contents({children}) {
     return (
         <div>
             <StyledDiv>
@@ -30,7 +28,7 @@ function Contents() {
 
                     </WriteTypes>
                     <WriteContent>
-
+                        {children}
                     </WriteContent>
                 </StyledDivInner>
             </StyledDiv>

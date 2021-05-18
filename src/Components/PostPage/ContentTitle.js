@@ -9,31 +9,31 @@ const StyledDivInner = styled.div`
     position: relative;
 `;
 
-const InputTitleDiv = styled.textarea`
-    overflow-x: hidden;
-  overflow-wrap: break-word;
-  height: 39px;
-  color: black;
-  caret-color: skyblue;
-  padding: 8px 68px 8px 16px;
-  border: 1px solid lightgray;
-  background-color: transparent;
-  resize: none;
-  box-sizing: border-box;
-  display: block;
-  width: 100%;
-  outline: none;
-  border-radius: 4px;
-  font-size: 14px;
-  font-weight: 400;
-  line-height: 21px;
-  font-family: inherit;
-  
-  &:focus {
-    box-shadow: none;
-    border: 1px solid black;
-  }
-`;
+// const InputTitleDiv = styled.textarea`
+//     overflow-x: hidden;
+//   overflow-wrap: break-word;
+//   height: 39px;
+//   color: black;
+//   caret-color: skyblue;
+//   padding: 8px 68px 8px 16px;
+//   border: 1px solid lightgray;
+//   background-color: transparent;
+//   resize: none;
+//   box-sizing: border-box;
+//   display: block;
+//   width: 100%;
+//   outline: none;
+//   border-radius: 4px;
+//   font-size: 14px;
+//   font-weight: 400;
+//   line-height: 21px;
+//   font-family: inherit;
+//
+//   &:focus {
+//     box-shadow: none;
+//     border: 1px solid black;
+//   }
+// `;
 
 const MaxTitleWordDiv = styled.div`
     font-size: 10px;
@@ -48,22 +48,23 @@ const MaxTitleWordDiv = styled.div`
   right: 12px;
 `;
 
-function ContentTitle(props) {
-    const [title, setTitle] = useState("");
+function ContentTitle({titleLength ,children}) {
+    // const [title, setTitle] = useState("");
 
     return (
         <StyledDiv>
             <StyledDivInner>
-                <InputTitleDiv maxLength={"300"} placeholder={"Title"} rows={"1"}
-                               onChange={function (e) {
-                                   setTitle(e.target.value);
-                                   // debugger;
-                                   props.setData(e.target.textLength);
-                               }}>
-                </InputTitleDiv>
+                {children}
+                {/*<InputTitleDiv maxLength={"300"} placeholder={"Title"} rows={"1"}*/}
+                {/*               onChange={function (e) {*/}
+                {/*                   setTitle(e.target.value);*/}
+
+                {/*               }}>*/}
+                {/*</InputTitleDiv>*/}
+
                 {/* 몇자 적었는지 알려줌 */}
                 <MaxTitleWordDiv>
-                    {title.length}/300
+                    {titleLength.length}/300
                 </MaxTitleWordDiv>
             </StyledDivInner>
         </StyledDiv>

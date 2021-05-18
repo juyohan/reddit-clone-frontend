@@ -1,5 +1,7 @@
-import React, {useState, useEffect} from 'react';
-import styled, {css} from "styled-components";
+import React, {useState} from 'react';
+import styled from "styled-components";
+import axios from "axios";
+import * as url from "url";
 
 const StyledDiv = styled.div`
   //  display: flex;
@@ -75,7 +77,6 @@ const PostButton = styled.button`
 `;
 
 function PostDataLayout(props) {
-    const value = props.isable;
 
     return (
         <StyledDiv>
@@ -83,7 +84,26 @@ function PostDataLayout(props) {
                 <ButtonDiv>
                     <ButtonInnerDiv>
                         {/* 내용물을 채우면 전송하기 버튼 활성화 */}
-                        <PostButton role={"button"} tabindex={"0"} disabled={value === 0}>
+                        <PostButton role={"button"} tabindex={"0"} disabled={props.data.title.length === 0}
+                        onClick={function (e) {
+                            axios.post(
+                                "http://localhost:8080/api/get/data/post",
+                                props.data
+                                ,
+                                {
+                                    headers : {
+                                        "Content-Type" : 'application/json'
+                                    }
+                                })
+                                .then(r => {
+                                    console.log(r);
+                                })
+                            // 전송 후 초기화
+                            props.resetData({
+                                title: '',
+                                desc: '',
+                            })
+                        }}>
                             Post
                         </PostButton>
                     </ButtonInnerDiv>

@@ -12,18 +12,24 @@ const StyledDiv = styled.div`
 `;
 
 function PostContextDiv () {
-    const [isTitleValue, setIsTitleValue] = useState(0);
+    const [inputs, setInputs] = useState({
+        title : '',
+        desc : '',
+        url : document.location.href
+    });
 
     return (
         <StyledDiv>
             {/* 해당 버튼에 의해 */}
             <SelectTypeContent>
-
             </SelectTypeContent>
+
             {/* 안에 내용물이 바뀜 */}
-            <ContentDiv setData={setIsTitleValue}>
+            <ContentDiv setData={setInputs} data={inputs}>
             </ContentDiv>
-            <PostDataLayout isable={isTitleValue}>
+
+            {/* 백엔드로 값을 전송 */}
+            <PostDataLayout data={inputs} resetData={setInputs}>
             </PostDataLayout>
         </StyledDiv>
     );
