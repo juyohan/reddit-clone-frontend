@@ -15,10 +15,17 @@ const StyledLink = styled(Link)`
     }
 `
 
-function RightRegister({children, to}) {
+function RightRegister({children, to, setMode, name}) {
+    const onClick = (e) => {
+            e.preventDefault();
+            setMode({
+                mode : name
+            })
+        }
+
     return(
         <Aligner>
-            <StyledLink to={to}>
+            <StyledLink to={to} onClick={onClick}>
                 {children}
             </StyledLink>
         </Aligner>

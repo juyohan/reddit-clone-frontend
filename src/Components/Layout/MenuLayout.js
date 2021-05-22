@@ -9,6 +9,7 @@ import MenuWrap from "./MenuWrap";
 import MenuDiv from "../Menu/MenuDiv";
 import MenuSearch from "../Menu/MenuSearch";
 import SubMenu from "../Menu/SubMenu";
+import AuthContainer from "../AuthWrap/AuthContainer";
 
 const StyledSvg = styled.svg`
   padding-left: 5px;
@@ -20,7 +21,6 @@ const StyledSvg = styled.svg`
 const StyledDiv = styled.div`
   background-color: white;
   border-radius: 5px;
-  border: 1px solid lightgray;
     display: flex;
   align-items: center;
   
@@ -36,7 +36,6 @@ const MenuBarDiv = styled.div`
   
   align-items: center;
   width: inherit;
-  border: 1px solid white;
   height: 50px;
   background-color: white;
 `;
@@ -64,7 +63,7 @@ function MenuLayout() {
                     {/*        hello*/}
                     {/*    </MenuSpan>*/}
                     {/*</MenuIcon>*/}
-                    <MenuIcon to={"/home/"}>
+                    <MenuIcon to={"/"}>
                     </MenuIcon>
 
                 </MenuDiv>
@@ -85,9 +84,9 @@ function MenuLayout() {
                     </StyledDiv>
                 </MenuDiv>
                 {/* 4. 로그인 하는 버튼 */}
-                <MenuDiv>
+                <AuthContainer>
 
-                </MenuDiv>
+                </AuthContainer>
 
             </MenuBarDiv>
         </MenuBarInner>

@@ -92,7 +92,7 @@ const TextDiv = styled.div`
   text-align: center;
   transform: translateX(-50%);
   white-space: pre;
-  z-index: 100;
+  z-index: 2;
   
   &::after {
     border-left: 5px solid transparent;

@@ -71,7 +71,6 @@ const StyledSvg = styled.svg`
 
 function ViewTypeWrap({children, wrap}) {
 
-    console.log(wrap);
     if(!wrap)
         return null;
 

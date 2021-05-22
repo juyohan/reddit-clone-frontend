@@ -7,7 +7,7 @@ const StyledHeader = styled.header`
   width: 100vw;
   left: 0;
   z-index: 1;
-  background-color: blue;
+  background-color: white;
 `;
 
 function DefaultHeader({children, ...rest}){

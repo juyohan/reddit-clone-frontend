@@ -3,12 +3,13 @@ import styled from "styled-components";
 import SelectTypeContent from "./SelectTypeContent";
 import ContentDiv from "./ContentDiv";
 import PostDataLayout from "./PostDataLayout";
-import {Route} from "react-router-dom";
 
 const StyledDiv = styled.div`
     background-color: white;
   margin-bottom: 15px;
   border-radius: 5px;
+  position: relative;
+  
 `;
 
 function PostContextDiv () {

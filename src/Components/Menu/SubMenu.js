@@ -1,5 +1,6 @@
-import React from 'react';
+import React, {useState} from 'react';
 import styled, {css} from "styled-components";
+import {Link} from "react-router-dom";
 
 const StyledDiv = styled.div`
   background-color: white;
@@ -10,11 +11,11 @@ const StyledDiv = styled.div`
   height: inherit;
   font-size: 14px;
   flex-direction: row;
-  //width: 100%;
-  
+  overflow-x: auto;
+  overflow-y: hidden;
 `;
 
-const SubA = styled.a`
+const SubA = styled(Link)`
   color: black;
   border-bottom: 4px solid white;
   height: 100%;
@@ -24,8 +25,8 @@ const SubA = styled.a`
   line-height: 50px;
   text-decoration: none;
   letter-spacing: unset;
-  padding: 0 15px;
-
+  margin: 0 20px;
+  
   &:hover {
     border-bottom: 4px solid lightgray;
   }
@@ -33,20 +34,37 @@ const SubA = styled.a`
 
 const StyledSpan = styled.span`
   display: inline-block;
+  padding: 0 15px;
+
+  &:enabled {
+
+  }
 `;
 
 function SubMenu() {
+    const [isClick, setIsClick] = useState(false);
+
+    const onClick = (e) => {
+        e.preventDefault();
+        const {name} = isClick;
+
+
+    }
+
     return(
         <StyledDiv>
-            <SubA href={"/home"}>
-                <StyledSpan>
+            <SubA to={"/"} >
+                {/*<StyledSpan enabled={isClick}>*/}
                     HOME
-                </StyledSpan>
+                {/*</StyledSpan>*/}
             </SubA>
-            <SubA href={"/group"}>
+            <SubA to={"/group"}>
                 <StyledSpan>
                     GROUP
                 </StyledSpan>
+            </SubA>
+            <SubA to={"/api/data/post"}>
+                POST
             </SubA>
         </StyledDiv>
     );

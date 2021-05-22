@@ -10,10 +10,10 @@ const StyledMenuDiv = styled(DefaultDiv)`
   background-color: white;
   display: flex;
   //justify-content: space-between;
-  border: 1px solid black;
   align-items: center;
   
   ${props => props.pad && css `
+    
     padding-left: 20px;
   `}
   

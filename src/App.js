@@ -9,8 +9,6 @@ import DefaultHeader from "./Components/DefaultValue/DefaultHeader";
 import BottomLayout from "./Components/Layout/BottomLayout";
 import {Route} from "react-router-dom";
 import PostLayout from "./Components/PostPage/PostLayout";
-import BottomDiv from "./Components/DefaultValue/BottomDiv";
-
 
 function App() {
     return (
@@ -24,7 +22,7 @@ function App() {
                 </DefaultHeader>
                 {/* 여기가 하단 입니다. */}
 
-                <Route path={"/home"} component={BottomLayout}/>
+                <Route path={"/"} exact={true} component={BottomLayout}/>
                 <Route path={"/api/data/post"} component={PostLayout}/>
 
             </LayoutDiv>

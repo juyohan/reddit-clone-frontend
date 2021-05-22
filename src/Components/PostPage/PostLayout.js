@@ -16,10 +16,11 @@ const StyledDiv = styled.div`
 `;
 
 const IndexDiv = styled.div`
-  z-index: 3;
+  z-index: 0;
 `;
 
 const PostDiv = styled.div`
+  //background-color: skyblue;
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -33,6 +34,7 @@ const PostDiv = styled.div`
 `;
 
 const PostInnerDiv = styled.div`
+  //background-color: dodgerblue;
   flex: 1 1 100%;
   min-width: 0;
   width: 100%;
@@ -45,6 +47,7 @@ const InnerDiv = styled.div`
 `;
 
 const BackGroundDiv = styled.div`
+  
     min-height: 100%;
   overflow: hidden;
   position: relative;
@@ -79,7 +82,6 @@ function PostLayout() {
 
                                 {/* post main */}
                                 <PostContextDiv>
-
                                 </PostContextDiv>
                             </InnerDiv>
                         </PostInnerDiv>

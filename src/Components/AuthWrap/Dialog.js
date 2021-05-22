@@ -11,6 +11,7 @@ const DarkBackGround = styled.div`
   align-items: center;
   justify-content: center;
   background: rgb(0, 0, 0, 0.8);
+  z-index: 100;
 `;
 
 const LogoHeader = styled.div`
@@ -30,7 +31,7 @@ const Logo = styled.span`
 `;
 
 const DialogBlock = styled.div`
-  width: 320px;
+  width: 500px;
   background: white;
   border-radius: 2px;
   position: absolute;
@@ -55,11 +56,14 @@ function Dialog({children, close, open}) {
     return (
         <>
             {open ?
-                <DarkBackGround onClick={close}>
-                    <DialogBlock onClick={function (e) {
-                        // 이게 이벤트 버블링을 제거해준다.
-                        e.stopPropagation();
-                    }}>
+                <DarkBackGround>
+                    <DialogBlock
+                    //     onClick={function (e) {
+                    //     // 이게 이벤트 버블링을 제거해준다.
+                    //     e.stopPropagation();
+                    //
+                    // }}
+                    >
                         <CloseIcon onClick={close}>
                             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
                                 <path
