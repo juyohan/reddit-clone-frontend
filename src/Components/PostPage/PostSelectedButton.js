@@ -54,7 +54,8 @@ const SelectedButton = styled(Link)`
 function PostSelectedButton({children, ...rest}) {
 
     return (
-        <SelectedButton {...rest}>
+        <SelectedButton
+            {...rest}>
             {children}
         </SelectedButton>
     );

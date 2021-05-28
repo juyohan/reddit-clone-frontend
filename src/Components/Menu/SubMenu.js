@@ -63,7 +63,7 @@ function SubMenu() {
                     GROUP
                 </StyledSpan>
             </SubA>
-            <SubA to={"/api/data/post"}>
+            <SubA to={"/api/data/post/text"}>
                 POST
             </SubA>
         </StyledDiv>

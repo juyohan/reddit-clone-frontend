@@ -9,10 +9,14 @@ import DefaultHeader from "./Components/DefaultValue/DefaultHeader";
 import BottomLayout from "./Components/Layout/BottomLayout";
 import {Route} from "react-router-dom";
 import PostLayout from "./Components/PostPage/PostLayout";
+import {UserContext} from "./Components/Helpers/UserContext";
 
 function App() {
+
+
     return (
         <>
+            {/*<UserContext.Provider value={isLogin}>*/}
             <LayoutDiv width>
                 {/*여기가 상단(배너) 입니다. */}
                 <DefaultHeader>
@@ -26,6 +30,7 @@ function App() {
                 <Route path={"/api/data/post"} component={PostLayout}/>
 
             </LayoutDiv>
+            {/*</UserContext.Provider>*/}
         </>
     );
 }

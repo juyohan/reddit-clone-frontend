@@ -37,14 +37,14 @@ const Input = styled.input`
 `;
 
 
-function InputWithLabel({label, name, icon, check, ...rest}) {
+function InputWithLabel({label, name, icon, check, setAble, ...rest}) {
 
     return (
         <Wrapper>
             <Label>
                 {label}
             </Label>
-            <InputDiv name={name} icon={icon} check={check}>
+            <InputDiv name={name} icon={icon} check={check} setAble={setAble}>
                 <Input name={name} {...rest}/>
             </InputDiv>
         </Wrapper>

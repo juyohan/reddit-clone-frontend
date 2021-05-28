@@ -84,7 +84,7 @@ const ContentDiv = (props) => {
             </ContentTitle>
 
 
-            <Route path={"/api/data/post"} render={() => <Contents>
+            <Route path={"/api/data/post/text"} render={() => <Contents>
                 {/* 내용 */}
                 <ContainerDiv name={"desc"} value={desc} spellCheck={"true"} placeholder={"Text (optional)"}
                               onChange={onChange}>

@@ -3,3 +3,4 @@ export const isEmail = email => {
 
     return emailRegex.test(email);
 };
+

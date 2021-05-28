@@ -85,7 +85,6 @@ function MenuLayout() {
                 </MenuDiv>
                 {/* 4. 로그인 하는 버튼 */}
                 <AuthContainer>
-
                 </AuthContainer>
 
             </MenuBarDiv>

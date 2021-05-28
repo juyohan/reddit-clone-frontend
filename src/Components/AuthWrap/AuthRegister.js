@@ -1,10 +1,11 @@
-import React, {useMemo, useState} from 'react';
+import React, {useState} from 'react';
 import AuthContent from "./AuthContent";
 import InputWithLabel from "./InputWithLabel";
 import RightRegister from "./RightRegister";
 import axios from "axios";
 import styled, {css} from "styled-components";
 import {isEmail} from "../Helpers/EmailHelper";
+import {useHistory} from "react-router-dom";
 
 const Wrapper = styled.div`
   margin-top: 1rem;
@@ -61,6 +62,9 @@ function AuthRegister(props) {
         passwordConfirm: ''
     });
 
+    // 아이디 중복을 위한 값
+    const [able, setAble] = useState('');
+
     const {email, username, password, passwordConfirm} = registerData;
 
     const onChange = (e) => {
@@ -70,6 +74,8 @@ function AuthRegister(props) {
             [name]: value
         });
     }
+
+    const history = useHistory();
 
     const onClick = (e) => {
         e.preventDefault();
@@ -83,7 +89,17 @@ function AuthRegister(props) {
                 }
             })
             .then(r => {
-                console.log(r);
+                if (r.status === 200) {
+                    setRegisterData({
+                        email: '',
+                        username: '',
+                        password: '',
+                        passwordConfirm: ''
+                    });
+                    props.setMode({
+                        mode : 'login'
+                    })
+                }
             });
     }
 
@@ -102,8 +118,47 @@ function AuthRegister(props) {
                         이메일 형식이 잘못되었습니다.
                     </TextDiv>
             }
-            <InputWithLabel label="아이디" name="username" value={username} check={registerData.username} onChange={onChange} placeholder="아이디"/>
+            <InputWithLabel label="아이디"
+                            name="username"
+                            value={username}
+                            check={registerData.username}
+                            onChange={onChange}
+                            placeholder="아이디"
+                            setAble={setAble}/>
             {/*사용 할 수 있는 아이디이다 아니다를 알려주기*/}
+            {(() => {
+                if (able === 'true') {
+                    if (username.length === 0) {
+                        setAble('zero');
+                        if (able === 'zero')
+                            return (<TextDiv>
+                                사용 가능한 아이디입니다.
+                            </TextDiv>)
+                    } else {
+                        return (
+                            <TextDiv equals>
+                                사용 가능한 아이디입니다.
+                            </TextDiv>
+                        )
+                    }
+                } else if (able === 'fail') {
+                    if (username.length === 0) {
+                        setAble('zero');
+                        if (able === 'zero')
+                            return (<TextDiv>
+                                이미 사용중인 아이디입니다.
+                            </TextDiv>)
+                    }
+                    else {
+                        return (
+                            <TextDiv equals>
+                                이미 사용중인 아이디입니다.
+                            </TextDiv>
+                        )
+                    }
+                }
+            })()
+            }
             <InputWithLabel label="비밀번호" name="password" value={password} onChange={onChange} placeholder="비밀번호"
                             type="password"/>
             <InputWithLabel label="비밀번호 확인" name="passwordConfirm" value={passwordConfirm} onChange={onChange}

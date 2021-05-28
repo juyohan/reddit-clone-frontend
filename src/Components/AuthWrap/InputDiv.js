@@ -39,8 +39,8 @@ const StyledButton = styled.button`
   }
 `
 
-function InputDiv({name, icon, check, children}) {
-    const [visible, setVisible] = useState(false);
+function InputDiv({name, icon, check, setAble, children}) {
+    // const [visible, setVisible] = useState(false);
 
     const onClick = (e) => {
         e.preventDefault();
@@ -54,11 +54,13 @@ function InputDiv({name, icon, check, children}) {
                 }
             })
             .then((r) => {
-                if (r.data === 'success') {
+                if (r.data === 'success'){
                     console.log("성공!");
+                    setAble('true');
                 }
                 else {
                     console.log("실패!");
+                    setAble('fail');
                 }
             })
             .catch((err) => {
