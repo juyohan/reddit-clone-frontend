@@ -1,7 +1,6 @@
-import React from 'react';
+import React, {useRef} from 'react';
 import styled, {css} from "styled-components";
 import {Link} from "react-router-dom";
-import SelectType from "../PheedBar/SelectType";
 import PostSvgList from "./PostSvgList";
 
 const SelectedButton = styled(Link)`
@@ -46,11 +45,17 @@ const SelectedButton = styled(Link)`
 `
 
 function PostButton({type, onToggle}) {
+
+    const handleChangeMode = () => {
+        onToggle(type.mode);
+    }
+
     return (
         <>
             <SelectedButton to={"/api/data/post/"+type.mode} type={type.active}
-                            onClick={() => onToggle(type.mode)}
+                            onClick={handleChangeMode}
             >
+                <PostSvgList type={type.mode} />
                 {type.name}
             </SelectedButton>
         </>
@@ -61,7 +66,8 @@ function PostButtonList({types, onToggle}) {
     return (
         <>
             {types.map(type => (
-                <PostButton type={type} onToggle={onToggle}/>
+
+                <PostButton type={type} onToggle={onToggle} key={type.name}/>
             ))
             }
         </>

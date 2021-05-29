@@ -1,4 +1,4 @@
-import React, {useState, useRef} from 'react';
+import React from 'react';
 import styled, {css} from "styled-components";
 import WriteTypes from "./PostPageContent/WriteTypes";
 import WriteContent from "./PostPageContent/WriteContent";

@@ -1,7 +1,6 @@
-import React, {useState} from 'react';
+import React from 'react';
 import styled from "styled-components";
 import axios from "axios";
-import * as url from "url";
 
 const StyledDiv = styled.div`
   //  display: flex;

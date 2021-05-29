@@ -2,7 +2,6 @@ import React from 'react';
 import styled from "styled-components";
 import PostDivTitle from "./PostDivTitle";
 import PostContextDiv from "./PostContextDiv";
-import PostDataLayout from "./PostDataLayout";
 
 const Div = styled.div`
   transition: margin-top .3s ease;

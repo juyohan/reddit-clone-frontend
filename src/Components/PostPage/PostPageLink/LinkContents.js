@@ -2,7 +2,6 @@ import React from 'react';
 import styled from "styled-components";
 
 const StyledTextarea = styled.textarea`
-    overflow-x: hidden;
   overflow-wrap: break-word;
   height: 66px;
   background: transparent;

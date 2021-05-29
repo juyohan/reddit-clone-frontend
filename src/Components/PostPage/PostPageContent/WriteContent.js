@@ -1,6 +1,5 @@
 import React, {useState} from 'react';
 import styled from 'styled-components'
-import {useRef} from "react/cjs/react.production.min";
 
 const StyledDiv = styled.div`
   overflow: auto;
