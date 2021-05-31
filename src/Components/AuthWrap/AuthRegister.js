@@ -5,7 +5,8 @@ import RightRegister from "./RightRegister";
 import axios from "axios";
 import styled, {css} from "styled-components";
 import {isEmail} from "../Helpers/EmailHelper";
-import {useHistory} from "react-router-dom";
+// import {useHistory} from "react-router-dom";
+import useInput from "../hooks/useInput";
 
 const Wrapper = styled.div`
   margin-top: 1rem;
@@ -55,10 +56,10 @@ const TextDiv = styled.div`
 `
 
 function AuthRegister(props) {
-    const [registerData, setRegisterData] = useState({
-        email: '',
-        username: '',
-        password: '',
+    const [registerData, onChange, onReset] = useInput({
+        email : '',
+        username : '',
+        password : '',
         passwordConfirm: ''
     });
 
@@ -67,15 +68,7 @@ function AuthRegister(props) {
 
     const {email, username, password, passwordConfirm} = registerData;
 
-    const onChange = (e) => {
-        const {name, value} = e.target;
-        setRegisterData({
-            ...registerData,
-            [name]: value
-        });
-    }
-
-    const history = useHistory();
+    // const history = useHistory();
 
     const onClick = (e) => {
         e.preventDefault();
@@ -90,12 +83,8 @@ function AuthRegister(props) {
             })
             .then(r => {
                 if (r.status === 200) {
-                    setRegisterData({
-                        email: '',
-                        username: '',
-                        password: '',
-                        passwordConfirm: ''
-                    });
+                    // onReset(); // 입력 값 초기화
+                    alert("회원가입에 성공하셨습니다.");
                     props.setMode({
                         mode : 'login'
                     })

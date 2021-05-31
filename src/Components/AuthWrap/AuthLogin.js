@@ -7,6 +7,7 @@ import RightRegister from "./RightRegister";
 import axios from "axios";
 import {useHistory} from "react-router-dom";
 import {UserContext} from "../Helpers/UserContext";
+import useInput from "../hooks/useInput";
 
 const Wrapper = styled.div`
   margin-top: 1rem;
@@ -55,20 +56,12 @@ const TextDiv = styled.div`
 
 
 function AuthLogin(props) {
-    const [loginData, setLoginData] = useState({
-        email: '',
-        password: ''
+    const [loginData, onChange] = useInput({
+        email : '',
+        password : '',
     })
 
     const {email, password} = loginData;
-
-    const onChange = (e) => {
-        const {name, value} = e.target;
-        setLoginData({
-            ...loginData,
-            [name]: value
-        });
-    }
 
     const onClick = (e) => {
         e.preventDefault();
@@ -89,7 +82,7 @@ function AuthLogin(props) {
                         // 모달 창 닫기
                         props.close(false);
                         // user의 정보 저장하기
-                        InputContext(r.data.username, r.data.email, r.data.authKey);
+                        // InputContext(r.data.username, r.data.email, r.data.authKey);
                     }
                     // 이메일 인증 안했을 경우
                     else {
@@ -105,10 +98,6 @@ function AuthLogin(props) {
             .catch(e => {
                 alert("없는 아이디입니다.");
             });
-
-    }
-
-    const InputContext = (username, email, authKey) => {
 
     }
 
