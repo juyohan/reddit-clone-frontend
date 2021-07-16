@@ -85,7 +85,7 @@ const CreatePostTime = styled.a`
   }
 `;
 
-function PheedInfoBar() {
+function FeedInfoBar() {
     return(
         <StyledDiv>
             <UserImageDiv>
@@ -115,4 +115,4 @@ function PheedInfoBar() {
     );
 }
 
-export default PheedInfoBar;
+export default FeedInfoBar;

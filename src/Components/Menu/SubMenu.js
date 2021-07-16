@@ -28,7 +28,7 @@ function SubMenu() {
             active: false
         },
         {
-            url: 'api/data/post/text',
+            url: 'post/text',
             name: 'POST',
             active: false
         }

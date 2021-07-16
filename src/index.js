@@ -3,13 +3,20 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import Root from "./Root";
 import reportWebVitals from './reportWebVitals';
+import {UserProvider} from "./Components/Context/UserContext";
+import {PheedProvider} from "./Components/Context/PheedDataContext";
 
 ReactDOM.render(
-  <React.StrictMode>
-    <Root />
-  </React.StrictMode>,
-  document.getElementById('root')
-);
+    <UserProvider>
+        {/*<PheedProvider>*/}
+            <React.StrictMode>
+                <Root/>
+            </React.StrictMode>,
+        {/*</PheedProvider>,*/}
+    </UserProvider>,
+    document.getElementById('root')
+)
+;
 
 // If you want to start measuring performance in your app, pass a function
 // to log results (for example: reportWebVitals(console.log))

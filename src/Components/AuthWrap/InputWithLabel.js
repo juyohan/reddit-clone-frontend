@@ -1,8 +1,6 @@
 import React from 'react';
-import {createAction, handleActions} from 'redux-actions'
 import styled, {css} from "styled-components";
 import InputDiv from "./InputDiv";
-import {Map} from 'immutable';
 
 const Wrapper = styled.div`
   & + & {
@@ -20,11 +18,11 @@ const Input = styled.input`
   width: 100%;
   border: none;
   outline: none;
-  border-radius: 0px;
   line-height: 2.5rem;
   font-size: 0.9rem;
   padding-left: 0.5rem;
   padding-right: 0.5rem;
+  
 
   ::placeholder {
     color: lightgray;
@@ -37,14 +35,14 @@ const Input = styled.input`
 `;
 
 
-function InputWithLabel({label, name, icon, check, setAble, ...rest}) {
+function InputWithLabel({label, name, icon, check, ...rest}) {
 
     return (
         <Wrapper>
             <Label>
                 {label}
             </Label>
-            <InputDiv name={name} icon={icon} check={check} setAble={setAble}>
+            <InputDiv name={name} icon={icon} check={check}>
                 <Input name={name} {...rest}/>
             </InputDiv>
         </Wrapper>

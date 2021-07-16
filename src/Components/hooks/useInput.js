@@ -1,52 +1,18 @@
-import {useReducer, useCallback} from "react";
-
-function reducer(state, action) {
-    switch (action.type) {
-        case 'INPUT_DATA' :
-            return {
-                ...state,
-                [action.name]: action.value
-            }
-        case 'RESET_DATA' :
-            return Object.keys(state).reduce((acc, cur) => {
-                acc[cur] = '';
-                return acc;
-            })
-        case 'POST_DATA' :
-            return {
-
-            }
-        default :
-            return state;
-    }
-}
+import {useCallback, useState} from "react";
 
 function useInput(initialForm) {
-    const [state, dispatch] = useReducer(reducer, initialForm);
+    const [value, setValue] = useState(initialForm);
 
-    const onChange = useCallback((e) => {
-        const {name, value} = e.target;
+    const handler = useCallback((e) => {
+        const blank = /\s/;
+        if (blank.test(e.target.value) === true) {
+            alert("공백은 사용할 수 없습니다.");
+            return ;
+        }
+        setValue(e.target.value)
+    },[]);
 
-        dispatch({
-            type: 'INPUT_DATA',
-            name,
-            value
-        });
-    }, []);
-
-    const onReset = useCallback(() => {
-        dispatch({
-            type: 'RESET_DATA'
-        })
-    }, []);
-
-    const onClick = useCallback(() => {
-        dispatch({
-            type: 'POST_DATA'
-        })
-    }, []);
-
-    return [state, onChange, onReset];
+    return [value, handler, setValue];
 }
 
 export default useInput;

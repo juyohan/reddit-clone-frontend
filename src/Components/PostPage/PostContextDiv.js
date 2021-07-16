@@ -3,6 +3,7 @@ import styled from "styled-components";
 import SelectTypeContent from "./SelectTypeContent";
 import ContentDiv from "./ContentDiv";
 import PostDataLayout from "./PostDataLayout";
+import {useUserState} from "../Context/UserContext";
 
 const StyledDiv = styled.div`
     background-color: white;
@@ -16,7 +17,7 @@ function PostContextDiv () {
     const [inputs, setInputs] = useState({
         title : '',
         desc : '',
-        url : document.location.href
+        // url : document.location.href
     });
 
     return (

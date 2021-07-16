@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from "styled-components";
+import {useUserState} from "../Context/UserContext";
 
 const DarkBackGround = styled.div`
   position: fixed;
@@ -51,11 +52,13 @@ const CloseIcon = styled.div`
   right: 0;
 `;
 
-function Dialog({children, close, open}) {
+function Dialog({children, close}) {
+
+    const {visible} = useUserState();
 
     return (
         <>
-            {open ?
+            {visible ?
                 <DarkBackGround>
                     <DialogBlock
                     //     onClick={function (e) {

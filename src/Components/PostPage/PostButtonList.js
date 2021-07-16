@@ -52,7 +52,7 @@ function PostButton({type, onToggle}) {
 
     return (
         <>
-            <SelectedButton to={"/api/data/post/"+type.mode} type={type.active}
+            <SelectedButton to={"/post/"+type.mode} type={type.active}
                             onClick={handleChangeMode}
             >
                 <PostSvgList type={type.mode} />
@@ -66,7 +66,6 @@ function PostButtonList({types, onToggle}) {
     return (
         <>
             {types.map(type => (
-
                 <PostButton type={type} onToggle={onToggle} key={type.name}/>
             ))
             }
