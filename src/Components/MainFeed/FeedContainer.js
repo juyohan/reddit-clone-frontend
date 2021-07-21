@@ -33,12 +33,10 @@ const PostInnerDiv = styled.div`
 
 
 function FeedContainer({match, location, history}) {
-    console.log(JSON.stringify(match,null,2));
-    console.log(JSON.stringify(location,null,2));
-    console.log(JSON.stringify(history,null,2));
+    console.log("match : " + JSON.stringify(match,null,2));
+    console.log("location : " + JSON.stringify(location,null,2));
+    console.log("history : " + JSON.stringify(history,null,2));
 
-    console.log(match.path);
-    console.log(location.pathname);
 
     return (
         <StyledDiv>

@@ -7,6 +7,7 @@ import FeedContainer from "../MainFeed/FeedContainer";
 import BottomRightContainer from "../BottomRight/BottomRightContainer";
 import LeftContainer from "../BottomLeft/LeftContainer";
 import {Route, Switch} from "react-router-dom";
+import QuickTopContainer from "../QuickMenu/QuickTopContainer";
 
 const BottomDiv = styled(DefaultDiv)`
   z-index: 3;
@@ -32,7 +33,7 @@ const StyledPheed = styled(DefaultDiv)`
 
 const StyledSideMenu = styled(DefaultDiv)`
   width: 24%;
-  padding: 100px 50px 0px;
+  padding: 100px 50px 0;
 `;
 
 
@@ -72,8 +73,16 @@ function BottomLayout({match, location, history}) {
                             {/*    <Route path={"/best"} component={FeedContainer}/>*/}
                             {/*</Switch>*/}
 
-                            <Route path={[`${match.path}/hot`, `/`]} exact component={FeedContainer}/>
-                            <Route path={match.path} component={FeedContainer}/>
+                            {/*<Route path={[`/hot`, `/`]} exact component={FeedContainer}/>*/}
+                            <Switch>
+                                <Route exact path={[`/hot`,`/`]} component={FeedContainer}/>
+                                <Route exact path={"/new"} component={FeedContainer}/>
+                                <Route exact path={"/rising"} component={FeedContainer}/>
+                                <Route exact path={`/top`} component={FeedContainer}/>
+                                <Route exact path={`/best`} component={FeedContainer}/>
+                            </Switch>
+
+                            <QuickTopContainer/>
 
                         </StyledPheed>
                     </BottomInner>

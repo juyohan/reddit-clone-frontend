@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useEffect, useRef, useState} from 'react';
 import styled from "styled-components";
 import LeftMenuIcon from "./LeftMenuIcon";
 
@@ -7,6 +7,8 @@ const SideMenuDiv = styled.div`
   flex-direction: column;
   //min-width: 200px;
   width: auto;
+  position: absolute;
+  ;
 `
 
 const SideMenu = styled.span`
@@ -19,6 +21,47 @@ const SideMenu = styled.span`
 `
 
 function LeftSideMenu() {
+    const [scrollY, setScrollY] = useState(0);
+    const [divLocation, setDivLocation] = useState();
+
+    // const refs = React.createRef();
+
+    const handleFollow = () => {
+        setScrollY(window.scrollY);
+    }
+
+    // const handleTop = () => {
+    //     window.scrollTo({
+    //         top : divLocation + scrollY,
+    //         behavior : "smooth"
+    //     })
+    // }
+
+    // useEffect(() => {
+    //     console.log("scrollY : ", scrollY);
+    //     // console.log("divLocation : ", divLocation);
+    //     console.log(refs
+    // }, [scrollY]);
+
+    useEffect(() => {
+        const watch = () => {
+            window.addEventListener('scroll', handleFollow);
+        }
+        watch();
+        // setDivLocation(refs.current.offsetTop);
+        return () => {
+            window.removeEventListener('scroll',handleFollow);
+        }
+    });
+
+    // console.log(window.scrollY);
+    // const handleAnimate = () => {
+    //     const position = window.scrollY;
+    //    stop().animate({
+    //         "top" : position + "px"
+    //     }, 1000)
+    // }
+
     const [types, setTypes] = useState([
         {
             name : 'Hot',
@@ -53,7 +96,10 @@ function LeftSideMenu() {
     }
 
     return(
-        <SideMenuDiv>
+        <SideMenuDiv style={{
+            top : scrollY + 150,
+            transition : "all 0.7s ease-out"
+        }} >
             <LeftMenuIcon types={types} onToggle={onToggle}>
             </LeftMenuIcon>
         </SideMenuDiv>

@@ -1,6 +1,6 @@
 import React, {useState} from "react";
 import styled from "styled-components";
-import {Link, Route, useHistory} from "react-router-dom";
+import {Link} from "react-router-dom";
 import Dialog from "./Dialog";
 import AuthLogin from "./AuthLogin";
 import AuthRegister from "./AuthRegister";

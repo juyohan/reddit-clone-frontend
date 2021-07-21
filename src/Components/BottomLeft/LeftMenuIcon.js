@@ -25,7 +25,7 @@ function LeftMenuSpan({type, onToggle}) {
 
     return (
         <>
-            <StyledSpan to={"/feed/" + type.mode} type={type.active} onClick={handleClickButton}>
+            <StyledSpan to={"/" + type.mode} type={type.active} onClick={handleClickButton}>
                 <LeftMenuSvgList type={type.mode}/>
                 {type.name}
             </StyledSpan>

@@ -1,11 +1,12 @@
-import React from 'react';
+import React, {useRef} from 'react';
 import styled from "styled-components";
 import LeftSideMenu from "./LeftSideMenu";
 
 const ContainerDiv = styled.div`
-    width: 24%;
+    width: 30%;
   padding: 100px 50px 0;
   display: flex;
+  
 `
 
 const ContainerInner = styled.div`
@@ -16,8 +17,11 @@ const ContainerInner = styled.div`
 
 
 function LeftContainer() {
+    // console.log("left : " + window.scrollY);
+    const ref = React.createRef();
+
     return (
-        <ContainerDiv>
+        <ContainerDiv ref={ref}>
             <LeftSideMenu>
 
             </LeftSideMenu>
